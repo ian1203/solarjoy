@@ -228,8 +228,7 @@ ul {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background:
-    url('https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1920&q=80') center/cover no-repeat;
+  background: url('https://images.unsplash.com/photo-1509391366360-2e959784a276?w=640&q=60') center/cover no-repeat;
   transform: scale(1.05);
 }
 
@@ -434,7 +433,7 @@ ul {
 /* Projects */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
   gap: 1.5rem;
 }
 
@@ -569,6 +568,103 @@ ul {
   color: var(--color-primary);
 }
 
+.product-img {
+  height: 160px;
+  overflow: hidden;
+  background: var(--color-surface);
+}
+
+.product-img picture,
+.product-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Portfolio mobile */
+.portfolio-mobile {
+  display: none;
+}
+
+.portfolio-mobile-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.portfolio-mobile-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.portfolio-mobile-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 1.25rem;
+}
+
+.portfolio-mobile-card h3 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.portfolio-mobile-card .project-type {
+  margin-bottom: 0.35rem;
+}
+
+.portfolio-mobile-card p {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-mobile-card strong {
+  color: var(--color-primary);
+  font-family: var(--font-display);
+}
+
+.pdf-desktop {
+  display: block;
+}
+
+/* Floating WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.1rem;
+  background: #25d366;
+  color: #fff;
+  border-radius: 999px;
+  box-shadow: 0 8px 28px rgba(37, 211, 102, 0.45);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.whatsapp-float svg {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.whatsapp-float-label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 32px rgba(37, 211, 102, 0.55);
+}
+
 /* PDF Viewer */
 .pdf-viewer-wrapper {
   background: var(--color-bg-card);
@@ -631,8 +727,7 @@ ul {
 .contact-bg {
   position: absolute;
   inset: 0;
-  background:
-    url('https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=1920&q=80') center/cover no-repeat;
+  background: url('https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=640&q=55') center/cover no-repeat;
   opacity: 0.12;
 }
 
@@ -775,7 +870,32 @@ a.contact-item:hover {
   opacity: 0.7;
 }
 
-/* Responsive */
+/* Responsive — Tablet */
+@media (min-width: 768px) {
+  .hero-bg {
+    background-image: url('https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1200&q=75');
+  }
+
+  .contact-bg {
+    background-image: url('https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=1200&q=65');
+  }
+
+  .portfolio-mobile-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero-bg {
+    background-image: url('https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1920&q=80');
+  }
+
+  .contact-bg {
+    background-image: url('https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=1920&q=75');
+  }
+}
+
+/* Responsive — Mobile & Tablet nav */
 @media (max-width: 900px) {
   .nav-toggle {
     display: flex;
@@ -816,15 +936,129 @@ a.contact-item:hover {
   .hybrid-visual {
     order: -1;
   }
+
+  .section {
+    padding: 72px 0;
+  }
+
+  .section-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 100px 0 64px;
+  }
+
+  .hero-desc {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-actions {
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-actions .btn {
+    flex: 1;
+    min-width: 140px;
+    justify-content: center;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+
+  .contact-form {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: min(1140px, 94vw);
+  }
+
+  .pdf-desktop {
+    display: none;
+  }
+
+  .portfolio-mobile {
+    display: block;
+  }
+
+  .portfolio-mobile-actions .btn {
+    width: 100%;
+  }
+
+  body {
+    padding-bottom: 5rem;
+  }
+
+  .whatsapp-float-label {
+    display: inline;
+  }
+}
+
+@media (min-width: 769px) {
+  .whatsapp-float-label {
+    display: none;
+  }
+
+  .whatsapp-float {
+    padding: 0.85rem;
+    border-radius: 50%;
+  }
 }
 
 @media (max-width: 600px) {
   .hero-stats {
-    gap: 1.5rem;
+    gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .stat strong {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
+  }
+
+  .stat span {
+    font-size: 0.75rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .section {
+    padding: 56px 0;
+  }
+
+  .section-header h2 {
+    font-size: 1.65rem;
+  }
+
+  .section-header p {
+    font-size: 0.95rem;
+  }
+
+  .nav-whatsapp {
+    width: 38px;
+    height: 38px;
+  }
+
+  .nav-whatsapp svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .whatsapp-float {
+    right: 1rem;
+    bottom: 1rem;
   }
 
   .pdf-toolbar {

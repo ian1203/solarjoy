@@ -121,6 +121,33 @@ function renderProjects() {
   `).join('');
 }
 
+function renderPortfolioMobile() {
+  const container = document.getElementById('portfolio-mobile');
+  if (!container) return;
+
+  container.innerHTML = `
+    <div class="portfolio-mobile-actions">
+      <a href="assets/portafolio-solar-joy.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-full">
+        Ver PDF completo
+      </a>
+      <a href="assets/portafolio-solar-joy.pdf" download class="btn btn-outline btn-full">
+        Descargar portafolio
+      </a>
+    </div>
+    <div class="portfolio-mobile-grid">
+      ${projects.map(p => `
+        <article class="portfolio-mobile-card">
+          <span class="project-type">${p.type}</span>
+          <h3>${p.name}</h3>
+          <p>${p.location}</p>
+          <strong>${p.generation}</strong>
+          <span style="font-size:0.8rem;color:var(--color-text-muted)"> / mes</span>
+        </article>
+      `).join('')}
+    </div>
+  `;
+}
+
 function initNav() {
   const toggle = document.querySelector('.nav-toggle');
   const links = document.querySelector('.nav-links');
@@ -193,6 +220,7 @@ function initHeaderScroll() {
 
 document.addEventListener('DOMContentLoaded', () => {
   renderProjects();
+  renderPortfolioMobile();
   initNav();
   initPdfFullscreen();
   initContactForm();
