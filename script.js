@@ -1,7 +1,7 @@
 const projects = [
   {
     type: 'Restaurante',
-    name: 'Sémpola Pan & Café',
+    name: 'Sémola Pan & Café',
     location: 'San Andrés Cholula, Puebla',
     specs: [
       '24 paneles de 555 W',
@@ -13,7 +13,7 @@ const projects = [
   },
   {
     type: 'Taller de cocina',
-    name: 'Sémpola Pan & Café',
+    name: 'Sémola Pan & Café',
     location: 'San Andrés Cholula, Puebla',
     specs: [
       '8 paneles de 555 W',
