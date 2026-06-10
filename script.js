@@ -134,17 +134,6 @@ function renderPortfolioMobile() {
         Descargar portafolio
       </a>
     </div>
-    <div class="portfolio-mobile-grid">
-      ${projects.map(p => `
-        <article class="portfolio-mobile-card">
-          <span class="project-type">${p.type}</span>
-          <h3>${p.name}</h3>
-          <p>${p.location}</p>
-          <strong>${p.generation}</strong>
-          <span style="font-size:0.8rem;color:var(--color-text-muted)"> / mes</span>
-        </article>
-      `).join('')}
-    </div>
   `;
 }
 
