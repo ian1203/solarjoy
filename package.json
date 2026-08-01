@@ -1,0 +1,8 @@
+{
+  "name": "solar-joy",
+  "private": true,
+  "description": "Sitio landing de Solar Joy. Sin build step: HTML/CSS/JS estático servido por Vercel + funciones serverless en /api.",
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -5,12 +5,77 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Solar Joy — Energía solar para hogares y negocios. Instalaciones a la medida, monitoreo inteligente y respaldo de hasta 10 KW.">
   <title>Solar Joy | Energía Solar</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%98%80%EF%B8%8F%3C/text%3E%3C/svg%3E">
+
+  <!-- Open Graph / redes sociales. og:image y og:url quedan pendientes:
+       no hay todavía una foto de marca (no un stock de Unsplash) para
+       usar como imagen de vista previa, ni un dominio de producción
+       confirmado. Agrégalos aquí cuando existan (imagen 1200×630 ideal). -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:site_name" content="Solar Joy">
+  <meta property="og:title" content="Solar Joy | Energía Solar">
+  <meta property="og:description" content="Instalaciones fotovoltaicas a la medida en Puebla y todo México, con monitoreo inteligente, respaldo energético y garantías de hasta 25 años.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Solar Joy | Energía Solar">
+  <meta name="twitter:description" content="Instalaciones fotovoltaicas a la medida en Puebla y todo México, con monitoreo inteligente y respaldo energético.">
+
+  <!-- Datos estructurados LocalBusiness — solo con datos que el sitio ya
+       publica (teléfono, ciudad, cobertura). No incluye calle/CP (no
+       públicos en el sitio) ni redes sociales (no confirmadas). -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Solar Joy",
+    "description": "Instalaciones de energía solar fotovoltaica residencial, comercial e híbrida.",
+    "telephone": "+52-222-513-2595",
+    "email": "ernesto.hernandezbz@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "San Andrés Cholula",
+      "addressRegion": "Puebla",
+      "addressCountry": "MX"
+    },
+    "areaServed": "MX"
+  }
+  </script>
+
+  <script>document.documentElement.classList.add('js')</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preload" as="image" fetchpriority="high" media="(max-width: 767px)" href="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=640&q=60">
+  <link rel="preload" as="image" fetchpriority="high" media="(min-width: 768px) and (max-width: 1199px)" href="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1200&q=75">
+  <link rel="preload" as="image" fetchpriority="high" media="(min-width: 1200px)" href="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1920&q=80">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Outfit:wght@400;500;600;700;800&display=optional" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+  <div class="cookie-banner" id="cookie-banner" role="region" aria-label="Preferencias de cookies" hidden>
+    <div class="cookie-banner-inner">
+      <p>Usamos cookies propias para que el sitio funcione y, solo si lo aceptas, cookies de analítica para entender qué páginas visitas. Consulta nuestro <a href="aviso-privacidad.html">aviso de privacidad</a>.</p>
+      <div class="cookie-banner-actions">
+        <button type="button" class="btn btn-sm btn-outline" id="cookie-configure" aria-expanded="false" aria-controls="cookie-settings">Configurar</button>
+        <button type="button" class="btn btn-sm btn-outline" id="cookie-reject">Rechazar</button>
+        <button type="button" class="btn btn-sm btn-primary" id="cookie-accept">Aceptar todo</button>
+      </div>
+      <div class="cookie-banner-settings" id="cookie-settings" hidden>
+        <label class="cookie-toggle">
+          <input type="checkbox" checked disabled>
+          <span>Necesarias — siempre activas (formulario de contacto y funcionamiento del sitio)</span>
+        </label>
+        <label class="cookie-toggle">
+          <input type="checkbox" id="cookie-analytics-toggle">
+          <span>Analítica — nos ayuda a entender qué páginas visitas</span>
+        </label>
+        <button type="button" class="btn btn-sm btn-primary" id="cookie-save">Guardar preferencias</button>
+      </div>
+    </div>
+  </div>
+
   <header class="header" id="inicio">
     <nav class="nav container">
       <a href="#inicio" class="logo">
@@ -23,6 +88,7 @@
         </button>
         <ul class="nav-links">
         <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#calculadora">Calculadora</a></li>
         <li><a href="#proyectos">Proyectos</a></li>
         <li><a href="#productos">Productos</a></li>
         <li><a href="#portafolio">Portafolio</a></li>
@@ -43,29 +109,33 @@
     </nav>
   </header>
 
-  <main>
+  <main id="main-content">
     <section class="hero">
       <div class="hero-bg"></div>
       <div class="hero-overlay"></div>
+      <svg class="hero-arc" viewBox="0 0 400 200" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <path class="hero-arc-path" d="M 0,190 A 210,210 0 0 1 400,190" />
+        <circle class="hero-arc-sun" cx="200" cy="44" r="7" />
+      </svg>
       <div class="hero-content container">
-        <p class="hero-tag">Energía limpia · Ahorro real · México</p>
-        <h1>Ayudando a hogares y negocios a <span class="highlight">ahorrar con energía solar</span></h1>
-        <p class="hero-desc">Instalaciones fotovoltaicas a la medida con monitoreo inteligente, respaldo energético y garantías de hasta 25 años.</p>
-        <div class="hero-actions">
+        <p class="hero-tag hero-in">Energía limpia · Ahorro real · México</p>
+        <h1 class="hero-in">Ayudando a hogares y negocios a <span class="highlight">ahorrar con energía solar</span></h1>
+        <p class="hero-desc hero-in">Instalaciones fotovoltaicas a la medida con monitoreo inteligente, respaldo energético y garantías de hasta 25 años.</p>
+        <div class="hero-actions hero-in">
           <a href="#contacto" class="btn btn-primary">Solicitar cotización</a>
           <a href="#portafolio" class="btn btn-outline">Ver portafolio</a>
         </div>
-        <div class="hero-stats">
+        <div class="hero-stats hero-in">
           <div class="stat">
-            <strong>8+</strong>
+            <strong class="count" data-count="8" data-suffix="+">8+</strong>
             <span>Proyectos instalados</span>
           </div>
           <div class="stat">
-            <strong>19,673</strong>
+            <strong class="count" data-count="19673">19,673</strong>
             <span>kWh/mes generados</span>
           </div>
           <div class="stat">
-            <strong>25</strong>
+            <strong class="count" data-count="25">25</strong>
             <span>Años de garantía</span>
           </div>
         </div>
@@ -74,28 +144,28 @@
 
     <section class="section servicios" id="servicios">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header reveal">
           <span class="section-label">Lo que hacemos</span>
           <h2>Soluciones solares completas</h2>
           <p>Desde residencias hasta escuelas y restaurantes, diseñamos sistemas que reducen tu recibo de luz hasta un 90–99%.</p>
         </div>
         <div class="cards-grid">
-          <article class="card service-card">
+          <article class="card service-card reveal">
             <div class="card-icon">🏠</div>
             <h3>Residencial</h3>
             <p>Sistemas a la medida para satisfacer el consumo doméstico con paneles de alto rendimiento y micro-inversores.</p>
           </article>
-          <article class="card service-card">
+          <article class="card service-card reveal">
             <div class="card-icon">🏢</div>
             <h3>Comercial</h3>
             <p>Proyectos para restaurantes, escuelas y negocios con inversores centrales de hasta 10 KW y estructuras UNIRAC.</p>
           </article>
-          <article class="card service-card">
+          <article class="card service-card reveal">
             <div class="card-icon">⚡</div>
             <h3>Sistemas híbridos</h3>
             <p>Respaldo de hasta 10 KW con baterías de litio, inversores Victron y energía continua ante apagones.</p>
           </article>
-          <article class="card service-card">
+          <article class="card service-card reveal">
             <div class="card-icon">🔧</div>
             <h3>Reacondicionamiento</h3>
             <p>Corrección y optimización de sistemas existentes afectados por eventos climáticos o fallas de instalación.</p>
@@ -104,9 +174,81 @@
       </div>
     </section>
 
+    <section class="section calculadora" id="calculadora">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Calculadora</span>
+          <h2>Calcula tu ahorro con energía solar</h2>
+          <p>Una estimación rápida de cuánto podrías ahorrar. Los resultados son aproximados — tu cotización final se ajusta a tu consumo real.</p>
+        </div>
+
+        <div class="calc-panel reveal">
+          <div class="calc-form">
+            <fieldset class="calc-toggle">
+              <legend>¿Cómo quieres calcularlo?</legend>
+              <label class="calc-toggle-option">
+                <input type="radio" name="calc-modo" value="pesos" checked>
+                <span>Por gasto mensual ($)</span>
+              </label>
+              <label class="calc-toggle-option">
+                <input type="radio" name="calc-modo" value="kwh">
+                <span>Por consumo (kWh)</span>
+              </label>
+            </fieldset>
+
+            <div class="form-group">
+              <label for="calc-valor" id="calc-valor-label">Gasto mensual de luz (MXN)</label>
+              <div class="calc-value-row">
+                <input type="range" id="calc-valor-range" min="300" max="15000" step="50" value="1500" aria-labelledby="calc-valor-label">
+                <input type="number" id="calc-valor" min="0" step="50" value="1500" inputmode="numeric" aria-labelledby="calc-valor-label">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="calc-inmueble">Tipo de inmueble</label>
+              <select id="calc-inmueble">
+                <option value="residencial">Residencial</option>
+                <option value="comercial">Comercial</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="calc-results" aria-live="polite">
+            <div class="calc-result">
+              <span class="calc-result-label">Ahorro mensual estimado</span>
+              <strong id="calc-ahorro-mensual">—</strong>
+            </div>
+            <div class="calc-result">
+              <span class="calc-result-label">Ahorro anual estimado</span>
+              <strong id="calc-ahorro-anual">—</strong>
+            </div>
+            <div class="calc-result">
+              <span class="calc-result-label">Sistema sugerido</span>
+              <strong id="calc-tamano">—</strong>
+            </div>
+            <div class="calc-result">
+              <span class="calc-result-label">CO₂ evitado al año</span>
+              <strong id="calc-co2">—</strong>
+            </div>
+            <div class="calc-result calc-result-wide">
+              <span class="calc-result-label">Retorno de inversión estimado</span>
+              <strong id="calc-payback">—</strong>
+            </div>
+          </div>
+
+          <p class="calc-disclaimer">Estimación con fines informativos; la cotización final puede variar según tu consumo real, ubicación y tarifa de CFE.</p>
+
+          <div class="calc-actions">
+            <a href="#contacto" class="btn btn-primary" id="calc-cta-form">Solicitar cotización con estos datos</a>
+            <a href="https://wa.me/522225132595" target="_blank" rel="noopener noreferrer" class="btn btn-outline" id="calc-cta-whatsapp">Cotizar por WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section hybrid-banner">
       <div class="container hybrid-inner">
-        <div class="hybrid-text">
+        <div class="hybrid-text reveal">
           <span class="section-label">Seguridad energética</span>
           <h2>Potencia total de respaldo: 10 KW</h2>
           <p>Sistemas híbridos bifásicos con baterías de litio hierro fosfato, monitoreo remoto Victron y ahorro estimado del 90% al 99% en tu recibo de luz.</p>
@@ -117,7 +259,8 @@
             <li>Sistema expandible a futuro</li>
           </ul>
         </div>
-        <div class="hybrid-visual">
+        <div class="hybrid-visual reveal">
+          <!-- PLACEHOLDER: foto de stock (Unsplash). Reemplazar por una instalación real. -->
           <picture>
             <source media="(min-width: 900px)" srcset="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80">
             <source media="(min-width: 480px)" srcset="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=600&q=70">
@@ -129,7 +272,7 @@
 
     <section class="section proyectos" id="proyectos">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header reveal">
           <span class="section-label">Portafolio de proyectos</span>
           <h2>Instalaciones reales en todo México</h2>
           <p>Cada proyecto incluye sistema de monitoreo inteligente y estructuras certificadas.</p>
@@ -140,12 +283,13 @@
 
     <section class="section productos" id="productos">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header reveal">
           <span class="section-label">Portafolio de productos</span>
           <h2>Equipos de la más alta calidad</h2>
         </div>
         <div class="products-grid">
-          <article class="product-card">
+          <!-- PLACEHOLDER: foto de stock (Unsplash). Reemplazar por foto real de panel instalado. -->
+          <article class="product-card reveal">
             <div class="product-img">
               <picture>
                 <source media="(min-width: 768px)" srcset="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=600&q=75">
@@ -162,7 +306,8 @@
               </ul>
             </div>
           </article>
-          <article class="product-card">
+          <!-- PLACEHOLDER: foto de stock (Unsplash). Reemplazar por foto real de inversor instalado. -->
+          <article class="product-card reveal">
             <div class="product-img">
               <picture>
                 <source media="(min-width: 768px)" srcset="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=75">
@@ -179,7 +324,8 @@
               </ul>
             </div>
           </article>
-          <article class="product-card">
+          <!-- PLACEHOLDER: foto de stock (Unsplash). Reemplazar por foto real de estructura UNIRAC instalada. -->
+          <article class="product-card reveal">
             <div class="product-img">
               <picture>
                 <source media="(min-width: 768px)" srcset="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=600&q=75">
@@ -196,7 +342,8 @@
               </ul>
             </div>
           </article>
-          <article class="product-card">
+          <!-- PLACEHOLDER: foto de stock (Unsplash). Reemplazar por foto real de componentes/gabinete. -->
+          <article class="product-card reveal">
             <div class="product-img">
               <picture>
                 <source media="(min-width: 768px)" srcset="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600&q=75">
@@ -219,14 +366,14 @@
 
     <section class="section portafolio-pdf" id="portafolio">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header reveal">
           <span class="section-label">Documento completo</span>
           <h2>Portafolio de Proyectos y Productos</h2>
           <p>Explora nuestro portafolio completo con fotografías de cada instalación y especificaciones técnicas.</p>
         </div>
         <div class="portfolio-mobile" id="portfolio-mobile" aria-label="Vista móvil del portafolio"></div>
 
-        <div class="pdf-viewer-wrapper pdf-desktop">
+        <div class="pdf-viewer-wrapper pdf-desktop reveal">
           <div class="pdf-toolbar">
             <span class="pdf-title">Portafolio Solar Joy.pdf</span>
             <div class="pdf-actions">
@@ -248,7 +395,7 @@
     <section class="section contacto" id="contacto">
       <div class="contact-bg"></div>
       <div class="container contact-inner">
-        <div class="contact-info">
+        <div class="contact-info reveal">
           <span class="section-label">Contacto</span>
           <h2>Convierte la energía del sol en tu mejor inversión</h2>
           <p>Solicita una cotización personalizada. Vigencia de 15 días. Deducible de ISR durante el primer año fiscal.</p>
@@ -276,26 +423,33 @@
             </div>
           </div>
         </div>
-        <form class="contact-form" id="contact-form">
+        <form class="contact-form reveal" id="contact-form" novalidate>
           <h3>Envíanos un mensaje</h3>
           <div class="form-group">
             <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+            <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre" autocomplete="name">
           </div>
           <div class="form-group">
             <label for="email">Correo electrónico</label>
-            <input type="email" id="email" name="email" required placeholder="tu@email.com">
+            <input type="email" id="email" name="email" required placeholder="tu@email.com" autocomplete="email">
           </div>
           <div class="form-group">
             <label for="telefono">Teléfono</label>
-            <input type="tel" id="telefono" name="telefono" placeholder="222 000 0000">
+            <input type="tel" id="telefono" name="telefono" placeholder="222 000 0000" autocomplete="tel">
           </div>
           <div class="form-group">
             <label for="mensaje">Mensaje</label>
             <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Cuéntanos sobre tu proyecto o consumo eléctrico..."></textarea>
           </div>
-          <button type="submit" class="btn btn-primary btn-full">Enviar mensaje</button>
-          <p class="form-note">Al enviar, se abrirá tu cliente de correo con el mensaje preparado.</p>
+          <div class="form-honeypot" aria-hidden="true">
+            <label for="empresa">Empresa</label>
+            <input type="text" id="empresa" name="empresa" tabindex="-1" autocomplete="off">
+          </div>
+          <input type="hidden" name="loadedAt" id="loadedAt">
+          <button type="submit" class="btn btn-primary btn-full">
+            <span class="btn-label">Enviar mensaje</span>
+          </button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
         </form>
       </div>
     </section>
@@ -308,6 +462,11 @@
         <span>Solar Joy</span>
       </div>
       <p>Ayudando a hogares y negocios a ahorrar con energía solar.</p>
+      <p class="footer-links">
+        <a href="aviso-privacidad.html">Aviso de privacidad</a>
+        <span aria-hidden="true">·</span>
+        <button type="button" class="footer-link-btn" id="cookie-preferences-link">Preferencias de cookies</button>
+      </p>
       <p class="footer-copy">&copy; 2026 Solar Joy. Todos los derechos reservados.</p>
     </div>
   </footer>
@@ -325,6 +484,8 @@
     <span class="whatsapp-float-label">WhatsApp</span>
   </a>
 
+  <script src="calculator-config.js"></script>
+  <script src="consent.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

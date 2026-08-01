@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# ⚠️ CONFIRMAR: reemplaza con el dominio de producción real antes de publicar.
+Sitemap: https://www.solarjoy.mx/sitemap.xml
